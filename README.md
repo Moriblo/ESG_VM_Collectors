@@ -1,19 +1,29 @@
 # ESG_VM_Collectors
 - Scripts para realizar: Extraction, Treatment e Loading (ETL) das fontes de dados para carregar nas tabelas definidas nos Datasets.
 ---
-## 🗂️ Padrão sugerido para os scripts de ETL
+## 🗂️ Scripts coletores de ETL
 
-| Fonte                 | Tabela Alvo | Script Python                                                                 |
-|-----------------------|-------------|-------------------------------------------------------------------------------|
-| Naturebase.org        | GeoDados    | [etl_geodados_naturebase.py](./etl_geodados_naturebase.py)                   |
-| SICAR                 | GeoDados    | [etl_geodados_sicar.py](./etl_geodados_sicar.py)                             |
-| Embrapa AgroAPI       | ProjetoNbS  | [etl_projetonbs_embrapa.py](./etl_projetonbs_embrapa.py)                     |
-| B3 Sustentabilidade   | ProjetoNbS  | [etl_projetonbs_b3sustentabilidade.py](./etl_projetonbs_b3sustentabilidade.py)|
-| ISE B3                | FundoESG    | [etl_fundoesg_iseb3.py](./etl_fundoesg_iseb3.py)                             |
-| Ações Verdes          | FundoESG    | [etl_fundoesg_acoesverdes.py](./etl_fundoesg_acoesverdes.py)                 |
-| Aliança Brasil NbS    | ProjetoNbS  | [etl_projetonbs_alianca.py](./etl_projetonbs_alianca.py)                     |
-| MapBiomas             | GeoDados    | [etl_geodados_mapbiomas_scraper.py](./etl_geodados_mapbiomas_scraper.py)     |
-| GFW + OSM             | GeoDados    | [etl_geodados_gfw_osm.py](./etl_geodados_gfw_osm.py)                         |
+| Fonte                 | Tabela Alvo | Script Python                                                                 | Status         |
+|-----------------------|-------------|-------------------------------------------------------------------------------|----------------|
+| Naturebase.org        | GeoDados    | [etl_geodados_naturebase.py](./etl_geodados_naturebase.py)                   | ⏸️ on hold     |
+| SICAR                 | GeoDados    | [etl_geodados_sicar.py](./etl_geodados_sicar.py)                             | 🚫 não iniciado|
+| Embrapa AgroAPI       | ProjetoNbS  | [etl_projetonbs_embrapa.py](./etl_projetonbs_embrapa.py)                     | 🚫 não iniciado|
+| B3 Sustentabilidade   | ProjetoNbS  | [etl_projetonbs_b3sustentabilidade.py](./etl_projetonbs_b3sustentabilidade.py)| 🚫 não iniciado|
+| ISE B3                | FundoESG    | [etl_fundoesg_iseb3.py](./etl_fundoesg_iseb3.py)                             | 🚫 não iniciado|
+| Ações Verdes          | FundoESG    | [etl_fundoesg_acoesverdes.py](./etl_fundoesg_acoesverdes.py)                 | 🚫 não iniciado|
+| Aliança Brasil NbS    | ProjetoNbS  | [etl_projetonbs_alianca.py](./etl_projetonbs_alianca.py)                     | 🚫 não iniciado|
+| MapBiomas             | GeoDados    | [etl_geodados_mapbiomas_scraper.py](./etl_geodados_mapbiomas_scraper.py)     | ⚠️ em testes   |
+| GFW + OSM             | GeoDados    | [etl_geodados_gfw_osm.py](./etl_geodados_gfw_osm.py)                         | ⚠️ em testes   |
+
+---
+
+### 🔖 Legenda de status
+
+- ✅ em produção
+- ⚠️ em testes
+- 🚧 em desenvolvimento
+- ⏸️ on hold
+- 🚫 não iniciado
 
 ## 🧩 Justificativa da nomenclatura
 

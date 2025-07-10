@@ -23,7 +23,6 @@
 - ⏸️ on hold
 - 🚫 não iniciado
 
-##
 ## 🧩 Justificativa da nomenclatura
 
 | Parte do nome   | Significado                                                                 |

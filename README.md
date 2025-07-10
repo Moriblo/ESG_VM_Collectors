@@ -1,7 +1,6 @@
 # ESG_VM_Collectors
 - Scripts para realizar: Extraction, Treatment e Loading (ETL) das fontes de dados para carregar nas tabelas definidas nos Datasets.
 ---
----
 ## 🗂️ Padrão sugerido para os scripts de ETL
 
 | Fonte                 | Tabela Alvo | Script Python                                                                 |

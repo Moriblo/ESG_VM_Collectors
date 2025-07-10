@@ -1,5 +1,7 @@
 # ESG_VM_Collectors
+- Scripts para realizar: Extraction, Treatment e Loading (ETL) das fontes de dados para carregar nas tabelas definidas nos Datasets.
 ---
+
 ## 🗂️ Padrão sugerido para os scripts de ETL
 
 | Fonte                     | Tabela Alvo   | Nome do Script Sugerido                  |
@@ -8,9 +10,13 @@
 | SICAR                    | GeoDados      | etl_geodados_sicar.py                   |
 | Embrapa AgroAPI          | ProjetoNbS    | etl_projetonbs_embrapa.py               |
 | B3 Sustentabilidade      | ProjetoNbS    | etl_projetonbs_b3sustentabilidade.py    |
-| ISE B3 / Ações Verdes    | FundoESG      | etl_fundoesg_b3.py                      |
+| ISE B3                   | FundoESG      | etl_fundoesg_iseb3.py                   |
+| Ações Verdes             | FundoESG      | etl_fundoesg_acoesverdes.py             |
 | Aliança Brasil NbS       | ProjetoNbS    | etl_projetonbs_alianca.py               |
-| MapBiomas / GFW / OSM    | GeoDados      | etl_geodados_mapbiomas_gfw_osm.py       |
+| MapBiomas                | GeoDados      | etl_geodados_mapbiomas.py               |
+| GFW                      | GeoDados      | etl_geodados_gfw.py                     |
+| OSM                      | GeoDados      | etl_geodados_osm.py                     |
+
 
 ## 🧩 Justificativa da nomenclatura
 

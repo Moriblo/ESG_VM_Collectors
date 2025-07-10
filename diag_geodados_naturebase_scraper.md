@@ -1,25 +1,34 @@
 # Diagrama ETL — Naturebase.org
 
-> Este documento descreve o fluxo de Extração, Transformação e Carga (ETL) do coletor [`etl_geodados_naturebase_scraper.py`](./etl_geodados_naturebase_scraper.py), responsável por importar dados da fonte **Naturebase.org** para a tabela `GeoDados`.
+> Este documento descreve o fluxo de Extração, Transformação e Carga (ETL) originalmente planejado para o coletor [`etl_geodados_naturebase_scraper.py`](./etl_geodados_naturebase_scraper.py), responsável por importar dados da fonte **Naturebase.org** para a tabela `GeoDados`.
 
 ---
 
-## 🎯 Objetivo
+## ⚠️ Situação atual
 
-Importar áreas prioritárias para NbS (Soluções baseadas na Natureza), com atributos como `biome`, `country` e `nbs_type`, e armazená-las na tabela `GeoDados` com estrutura genérica baseada em `JSONB` e `GEOMETRY`.
+O repositório GitHub anteriormente utilizado para coleta automatizada foi removido ou tornado privado:
 
----
+- ❌ [https://github.com/nature4climate/naturebase-data](https://github.com/nature4climate/naturebase-data) → **Erro 404**
 
-## 📦 Fonte dos dados
-
-- **Origem:** [https://github.com/nature4climate/naturebase-data](https://github.com/nature4climate/naturebase-data)
-- **Tipo de dado:** Áreas prioritárias para soluções baseadas na natureza (NbS)
-- **Formato original:** `.zip` contendo `.shp`
-- **Tipo de coleta:** Scraping do repositório GitHub
+Dessa forma, o processo de scraping e ETL automatizado está temporariamente suspenso.
 
 ---
 
-## 📊 Diagrama de Fluxo ETL
+## ⏸️ Status do coletor
+
+- **Status atual:** ⏸️ on hold
+- **Motivo:** Fonte de dados indisponível para coleta automatizada
+- **Alternativa:** Aguardar nova publicação oficial ou realizar download manual via [https://www.naturebase.org](https://www.naturebase.org)
+
+---
+
+## 🧪 Script relacionado
+
+- [`etl_geodados_naturebase_scraper.py`](./etl_geodados_naturebase_scraper.py) *(em pausa)*
+
+---
+
+## 🔁 Histórico do fluxo ETL planejado (para referência futura)
 
 ```text
 [Scraping do repositório GitHub do Naturebase]

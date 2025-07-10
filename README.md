@@ -1,9 +1,8 @@
 # ESG_VM_Collectors
 ---
-## 🔁 ETL: Naturebase.org → GeoDados
+## 🔁 ETL: [Naturebase.org](https://naturebase.org) → GeoDados
 
-> Esta construção corresponde à linha da tabela em [Datasets/Mapeamento: Fontes Open Free → Tabelas do Projeto](https://github.com/Moriblo/ESG_VM_Datasets):
-> 🌍 [Naturebase.org](https://naturebase.org) → `GeoDados`  
+> Esta construção corresponde à linha da tabela em [Datasets/Mapeamento: Fontes Open Free → Tabelas do Projeto](https://github.com/Moriblo/ESG_VM_Datasets)
 > **Objetivo:** importar áreas prioritárias para NbS (Soluções baseadas na Natureza), com atributos como bioma, país e tipo de NbS.
 
 ---

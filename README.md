@@ -34,3 +34,23 @@
         ↓
 [Armazenamento do campo poligono como geometry(Polygon, 4326) via PostGIS]
 
+### 🗂️ Padrão sugerido para os scripts de ETL
+
+| Fonte                     | Tabela Alvo   | Nome do Script Sugerido                  |
+|--------------------------|---------------|------------------------------------------|
+| SICAR                    | GeoDados      | etl_geodados_sicar.py                   |
+| Embrapa AgroAPI          | ProjetoNbS    | etl_projetonbs_embrapa.py               |
+| B3 Sustentabilidade      | ProjetoNbS    | etl_projetonbs_b3sustentabilidade.py    |
+| ISE B3 / Ações Verdes    | FundoESG      | etl_fundoesg_b3.py                      |
+| Aliança Brasil NbS       | ProjetoNbS    | etl_projetonbs_alianca.py               |
+| MapBiomas / GFW / OSM    | GeoDados      | etl_geodados_mapbiomas_gfw_osm.py       |
+
+### 🧩 Justificativa da nomenclatura
+
+| Parte do nome   | Significado                                                                 |
+|------------------|------------------------------------------------------------------------------|
+| `etl_`           | Prefixo padrão para scripts de Extração, Transformação e Carga              |
+| `geodados_`      | Indica a tabela de destino no modelo ER                                     |
+| `naturebase`     | Nome da fonte de dados (específico e descritivo)                            |
+| `.py`            | Extensão do script Python                                                   |
+

@@ -57,3 +57,14 @@
         ↓
 [Armazenamento do campo poligono como geometry(Polygon, 4326) via PostGIS]
 ````
+---
+### 🔁 Comparativo: Naturebase.org vs. MapBiomas / GFW / OSM
+
+| Critério                         | Naturebase.org                               | MapBiomas / GFW / OSM                          |
+|----------------------------------|----------------------------------------------|------------------------------------------------|
+| Tipo de dado                     | Áreas prioritárias para NbS                  | Uso do solo, alertas, infraestrutura           |
+| Formato                          | .shp, .tif, .geojson                         | .tif, .shp, .osm, .geojson                     |
+| Acesso automático                | ❌ (interface manual)                        | ✅ (links diretos, APIs, scraping viável)      |
+| Frequência de atualização        | Estática                                     | Regular (anual ou mensal, dependendo da fonte) |
+| Cobertura geográfica             | Global                                       | Brasil (MapBiomas), Global (GFW, OSM)          |
+| Potencial para ETL automatizado | Baixo                                        | Alto                                           |

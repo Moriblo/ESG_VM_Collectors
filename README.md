@@ -75,13 +75,13 @@
 | Frequência de atualização        | Estática                                     | Regular (anual ou mensal, dependendo da fonte) |
 | Cobertura geográfica             | Global                                       | Brasil (MapBiomas), Global (GFW, OSM)          |
 | Potencial para ETL automatizado | Baixo                                        | Alto                                           |
-##
+
 ---
 ## 🔁 ETL: MapBiomas / GFW / OSM → GeoDados (modularizado)
 
 - Esta construção corresponde às linhas da tabela em [Datasets/Mapeamento: Fontes Open Free → Tabelas do Projeto](https://github.com/Moriblo/ESG_VM_Datasets)
 - **Objetivo:** importar dados geoespaciais de uso do solo, alertas ambientais e infraestrutura para compor a base `GeoDados`, com estrutura genérica e extensível.
----
+##
 ### 📦 Fontes e scripts separados
 
 | Fonte       | Script Python                      | Tipo de Coleta       |

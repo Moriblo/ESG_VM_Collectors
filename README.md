@@ -1,7 +1,7 @@
 # ESG_VM_Collectors
 - Scripts para realizar: Extraction, Treatment e Loading (ETL) das fontes de dados para carregar nas tabelas definidas nos Datasets.
 ---
-
+---
 ## 🗂️ Padrão sugerido para os scripts de ETL
 
 | Fonte                     | Tabela Alvo   | Nome do Script Sugerido                  |
@@ -28,7 +28,7 @@
 | `.py`            | Extensão do script Python                                                   |
 
 ---
-
+---
 ## 🔁 ETL: [Naturebase.org](https://naturebase.org) → GeoDados
 
 - Esta construção corresponde à linha da tabela em [Datasets/Mapeamento: Fontes Open Free → Tabelas do Projeto](https://github.com/Moriblo/ESG_VM_Datasets)
@@ -68,3 +68,45 @@
 | Frequência de atualização        | Estática                                     | Regular (anual ou mensal, dependendo da fonte) |
 | Cobertura geográfica             | Global                                       | Brasil (MapBiomas), Global (GFW, OSM)          |
 | Potencial para ETL automatizado | Baixo                                        | Alto                                           |
+
+---
+---
+## 🔁 ETL: MapBiomas / GFW / OSM → GeoDados
+
+- Esta construção corresponde à linha da tabela em [Datasets/Mapeamento: Fontes Open Free → Tabelas do Projeto](https://github.com/Moriblo/ESG_VM_Datasets)
+- **Objetivo:** importar dados geoespaciais de uso do solo, alertas ambientais e infraestrutura para compor a base `GeoDados`.
+
+---
+
+### 📦 O que estamos baixando?
+
+- **MapBiomas**: uso e cobertura da terra (coleção 7, ano 2022)
+  - Fonte: [https://mapbiomas.org](https://mapbiomas.org)
+  - Formato: `.shp` (uso_solo_2022.zip)
+- **GFW (Global Forest Watch)**: alertas de desmatamento (Landsat)
+  - Fonte: [https://data.globalforestwatch.org](https://data.globalforestwatch.org)
+  - Formato: `.shp` (umd_landsat_alerts.zip)
+- **OpenStreetMap (Geofabrik)**: infraestrutura (estradas, ferrovias, etc.)
+  - Fonte: [https://download.geofabrik.de](https://download.geofabrik.de)
+  - Formato: `.shp` (brazil-latest-free.shp.zip)
+
+---
+
+### 📊 Diagrama de Fluxo ETL
+
+```text
+[Download automático dos shapefiles das fontes MapBiomas, GFW e OSM]
+        ↓
+[Arquivos: uso_solo_mapbiomas.zip, alertas_gfw.zip, infraestrutura_osm.geojson]
+        ↓
+[Leitura e conversão para GeoDataFrame com GeoPandas]
+        ↓
+[Conversão de CRS para EPSG:4326 (WGS84)]
+        ↓
+[Enriquecimento: padronizar colunas, validar geometria, adicionar metadados]
+        ↓
+[Inserção em tabela GeoDados]
+        ↓
+[Armazenamento do campo poligono como geometry(Polygon, 4326) via PostGIS]
+````
+

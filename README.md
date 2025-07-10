@@ -2,7 +2,7 @@
 ---
 ## 🔁 ETL: Naturebase.org → GeoDados
 
-> Esta construção corresponde à linha da tabela em [Datasets](https://github.com/Moriblo/ESG_VM_Datasets):
+> Esta construção corresponde à linha da tabela em [Datasets/Mapeamento: Fontes Open Free → Tabelas do Projeto](https://github.com/Moriblo/ESG_VM_Datasets):
 > 🌍 [Naturebase.org](https://naturebase.org) → `GeoDados`  
 > **Objetivo:** importar áreas prioritárias para NbS (Soluções baseadas na Natureza), com atributos como bioma, país e tipo de NbS.
 

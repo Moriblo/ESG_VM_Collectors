@@ -105,4 +105,4 @@
         ↓
 [Armazenamento do campo geometry como GEOMETRY(Geometry, 4326) via PostGIS]
 ```
-
+---

@@ -3,19 +3,32 @@
 ## 🔁 ETL: Naturebase.org → GeoDados
 
 > Esta construção corresponde à linha da tabela anexa:
-> 🌍 Naturebase.org → `GeoDados` — Áreas prioritárias para NbS (polígonos, biomas, países)
+> 🌍 [Naturebase.org](https://naturebase.org) → `GeoDados`  
+> **Objetivo:** importar áreas prioritárias para NbS (Soluções baseadas na Natureza), com atributos como bioma, país e tipo de NbS.
 
-### 📊 Diagrama de Fluxo
+---
+
+### 📦 O que estamos baixando?
+
+Do site [Naturebase.org](https://naturebase.org), baixamos arquivos geoespaciais contendo:
+- **Shapefiles** ou **GeoTIFFs** com polígonos de áreas prioritárias
+- Atributos como: `biome`, `country`, `nbs_type`
+- Formato original: `.shp`, `.tif`, `.geojson` (dependendo da camada)
+
+---
+
+### 📊 Diagrama de Fluxo ETL
 
 ```text
-[Download manual ou via script]
+[Download manual do shapefile do Naturebase.org]
         ↓
-[Shapefile / GeoTIFF / GeoJSON]
+[Arquivo: naturebase_areas_prioritarias.shp]
         ↓
-[Conversão para GeoJSON com GeoPandas]
+[Leitura e conversão para GeoDataFrame com GeoPandas]
         ↓
-[Enriquecimento: bioma, país, tipo]
+[Conversão de CRS para EPSG:4326 (WGS84)]
         ↓
-[Validação de geometria e CRS (EPSG:4326)]
+[Enriquecimento: renomear colunas, validar geometria]
         ↓
 [Inserção em tabela GeoDados (PostGIS)]
+

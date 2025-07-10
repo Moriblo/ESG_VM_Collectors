@@ -32,7 +32,7 @@
 | `geodados_`      | Indica a tabela de destino no modelo ER                                     |
 | `naturebase`     | Nome da fonte de dados (específico e descritivo)                            |
 | `.py`            | Extensão do script Python                                                   |
----
+
 ---
 ## 🔁 ETL: [Naturebase.org](https://naturebase.org) → GeoDados
 

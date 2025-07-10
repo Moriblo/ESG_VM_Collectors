@@ -1,0 +1,6 @@
+CREATE TABLE geodados (
+  id SERIAL PRIMARY KEY,
+  fonte TEXT,                          -- Ex: 'mapbiomas', 'gfw', 'osm'
+  atributos JSONB,                     -- Armazena os atributos variáveis de cada fonte
+  geometry GEOMETRY(Geometry, 4326)    -- Suporta Point, LineString, Polygon, etc.
+);

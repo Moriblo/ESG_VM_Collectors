@@ -38,6 +38,7 @@ Scripts para realizar: Extraction, Treatment e Loading (ETL) das fontes de dados
 | `etl_`           | Prefixo padrão para scripts de Extração, Transformação e Carga              |
 | `geodados_`      | Indica a tabela de destino no modelo ER                                     |
 | `naturebase`     | Nome da fonte de dados (específico e descritivo)                            |
+| `scraper`        | Informa se o script contém scraping antes do ETL                            |
 | `.py`            | Extensão do script Python                                                   |
 
 ---

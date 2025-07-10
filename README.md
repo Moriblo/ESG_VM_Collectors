@@ -38,7 +38,7 @@
 
 - Esta construção corresponde à linha da tabela em [Datasets/Mapeamento: Fontes Open Free → Tabelas do Projeto](https://github.com/Moriblo/ESG_VM_Datasets)
 - **Objetivo:** importar áreas prioritárias para NbS (Soluções baseadas na Natureza), com atributos como bioma, país e tipo de NbS.
-
+##
 ### 📦 O que estamos baixando?
 
 - Do site [Naturebase.org](https://naturebase.org), baixamos arquivos geoespaciais contendo:

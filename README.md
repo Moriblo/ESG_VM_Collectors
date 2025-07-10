@@ -13,15 +13,16 @@
   - **Shapefiles** ou **GeoTIFFs** com polígonos de áreas prioritárias
   - Atributos como: `biome`, `country`, `nbs_type`
   - Formato original: `.shp`, `.tif`, `.geojson` (dependendo da camada)
+  - Fonte oficial de dados: [naturebase-data (GitHub)](https://github.com/nature4climate/naturebase-data)
 
 ---
 
 ### 📊 Diagrama de Fluxo ETL
 
 ```text
-[Download manual do shapefile do Naturebase.org]
+[Download automático do shapefile do repositório Naturebase]
         ↓
-[Arquivo: naturebase_areas_prioritarias.shp]
+[Arquivo: NbS_Priority_Areas_Global_Shapefile.zip]
         ↓
 [Leitura e conversão para GeoDataFrame com GeoPandas]
         ↓
@@ -29,5 +30,7 @@
         ↓
 [Enriquecimento: renomear colunas, validar geometria]
         ↓
-[Inserção em tabela GeoDados (PostGIS)]
+[Inserção em tabela GeoDados]
+        ↓
+[Armazenamento do campo poligono como geometry(Polygon, 4326) via PostGIS]
 

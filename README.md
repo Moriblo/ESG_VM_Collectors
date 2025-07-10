@@ -97,16 +97,16 @@
 ```text
 [Download automático dos shapefiles das fontes MapBiomas, GFW e OSM]
         ↓
-[Arquivos: uso_solo_mapbiomas.zip, alertas_gfw.zip, infraestrutura_osm.geojson]
+[Arquivos: uso_solo_mapbiomas.zip, alertas_gfw.zip, infraestrutura_osm.shp]
         ↓
 [Leitura e conversão para GeoDataFrame com GeoPandas]
         ↓
 [Conversão de CRS para EPSG:4326 (WGS84)]
         ↓
-[Enriquecimento: padronizar colunas, validar geometria, adicionar metadados]
+[Enriquecimento: padronizar colunas, validar geometria, empacotar atributos em JSONB]
         ↓
 [Inserção em tabela GeoDados]
         ↓
-[Armazenamento do campo poligono como geometry(Polygon, 4326) via PostGIS]
+[Armazenamento do campo geometry como GEOMETRY(Geometry, 4326) via PostGIS]
 ````
 

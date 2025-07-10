@@ -1,9 +1,10 @@
 # ESG_VM_Collectors
 ---
-### 🗂️ Padrão sugerido para os scripts de ETL
+## 🗂️ Padrão sugerido para os scripts de ETL
 
 | Fonte                     | Tabela Alvo   | Nome do Script Sugerido                  |
 |--------------------------|---------------|------------------------------------------|
+| Naturebase.org           | GeoDados      | etl_geodados_naturebase.py              |
 | SICAR                    | GeoDados      | etl_geodados_sicar.py                   |
 | Embrapa AgroAPI          | ProjetoNbS    | etl_projetonbs_embrapa.py               |
 | B3 Sustentabilidade      | ProjetoNbS    | etl_projetonbs_b3sustentabilidade.py    |
@@ -11,7 +12,7 @@
 | Aliança Brasil NbS       | ProjetoNbS    | etl_projetonbs_alianca.py               |
 | MapBiomas / GFW / OSM    | GeoDados      | etl_geodados_mapbiomas_gfw_osm.py       |
 
-### 🧩 Justificativa da nomenclatura
+## 🧩 Justificativa da nomenclatura
 
 | Parte do nome   | Significado                                                                 |
 |------------------|------------------------------------------------------------------------------|

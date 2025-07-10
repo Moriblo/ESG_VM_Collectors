@@ -92,7 +92,6 @@
 [Conversão de CRS para EPSG:4326 (WGS84)]
         ↓
 [Enriquecimento: empacotar atributos em JSONB]
-```
         ↓
 [Inserção em tabela GeoDados]
         ↓

@@ -9,10 +9,10 @@
 
 ### 📦 O que estamos baixando?
 
-Do site [Naturebase.org](https://naturebase.org), baixamos arquivos geoespaciais contendo:
-- **Shapefiles** ou **GeoTIFFs** com polígonos de áreas prioritárias
-- Atributos como: `biome`, `country`, `nbs_type`
-- Formato original: `.shp`, `.tif`, `.geojson` (dependendo da camada)
+- Do site [Naturebase.org](https://naturebase.org), baixamos arquivos geoespaciais contendo:
+- - **Shapefiles** ou **GeoTIFFs** com polígonos de áreas prioritárias
+- - Atributos como: `biome`, `country`, `nbs_type`
+- - Formato original: `.shp`, `.tif`, `.geojson` (dependendo da camada)
 
 ---
 

@@ -15,8 +15,6 @@
 | MapBiomas             | GeoDados    | [etl_geodados_mapbiomas_scraper.py](./etl_geodados_mapbiomas_scraper.py)     | ⚠️ em testes   |
 | GFW + OSM             | GeoDados    | [etl_geodados_gfw_osm.py](./etl_geodados_gfw_osm.py)                         | ⚠️ em testes   |
 
----
-
 ### 🔖 Legenda de status
 
 - ✅ em produção

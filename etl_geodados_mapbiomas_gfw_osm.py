@@ -3,13 +3,14 @@ import requests
 import zipfile
 import io
 import geopandas as gpd
+import pandas as pd
 from sqlalchemy import create_engine
+from shapely.geometry import mapping
 
 # ------------------------------------------------------------
 # 📥 [Download automático dos shapefiles das fontes MapBiomas, GFW e OSM]
 # ------------------------------------------------------------
 
-# URLs públicas para download direto
 urls = {
     "mapbiomas": "https://storage.googleapis.com/mapbiomas-public/collection7/legenda/uso_solo_2022.zip",
     "gfw": "https://data.globalforestwatch.org/download/alerts/umd_landsat_alerts.zip",
@@ -36,7 +37,7 @@ for fonte, url in urls.items():
 
 print("📚 Lendo shapefiles com GeoPandas...")
 
-# Exemplo de caminhos (ajuste conforme os arquivos reais extraídos)
+# Ajuste os nomes conforme os arquivos reais extraídos
 mapbiomas_shp = os.path.join(arquivos_extraidos["mapbiomas"], "uso_solo_2022.shp")
 gfw_shp = os.path.join(arquivos_extraidos["gfw"], "umd_landsat_alerts.shp")
 osm_shp = os.path.join(arquivos_extraidos["osm"], "gis_osm_roads_free_1.shp")
@@ -58,27 +59,21 @@ gdf_osm = gdf_osm.to_crs(epsg=4326)
 # 🧹 [Enriquecimento: padronizar colunas, validar geometria, adicionar metadados]
 # ------------------------------------------------------------
 
-def preparar_gdf(gdf, fonte, colunas):
-    gdf = gdf[colunas + ["geometry"]]
-    gdf.columns = [c.lower() for c in colunas] + ["geometry"]
+def preparar_gdf(gdf, fonte):
     gdf = gdf[gdf.is_valid]
     gdf["fonte"] = fonte
-    return gdf
+    gdf["atributos"] = gdf.drop(columns=["geometry"]).apply(lambda row: row.to_dict(), axis=1)
+    return gdf[["fonte", "atributos", "geometry"]]
 
-gdf_mapbiomas = preparar_gdf(gdf_mapbiomas, "mapbiomas", ["CLASSE_USO"])
-gdf_gfw = preparar_gdf(gdf_gfw, "gfw", ["CONFIDENCE"])
-gdf_osm = preparar_gdf(gdf_osm, "osm", ["fclass"])
+gdf_mapbiomas = preparar_gdf(gdf_mapbiomas, "mapbiomas")
+gdf_gfw = preparar_gdf(gdf_gfw, "gfw")
+gdf_osm = preparar_gdf(gdf_osm, "osm")
 
 # ------------------------------------------------------------
-# 🗃️ [Inserção em tabela GeoDados]
+# 🗃️ [Inserção em tabela GeoDados com JSONB + Geometry]
 # ------------------------------------------------------------
 
-# Conexão com banco PostGIS
 engine = create_engine("postgresql://usuario:senha@localhost:5432/seubanco")
-
-# ------------------------------------------------------------
-# 🧭 [Armazenamento do campo poligono como geometry(Polygon, 4326) via PostGIS]
-# ------------------------------------------------------------
 
 print("📤 Inserindo dados na tabela 'geodados'...")
 

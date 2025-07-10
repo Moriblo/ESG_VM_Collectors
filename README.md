@@ -33,7 +33,7 @@
 [Inserção em tabela GeoDados]
         ↓
 [Armazenamento do campo poligono como geometry(Polygon, 4326) via PostGIS]
-
+````
 ---
 
 ### 🗂️ Padrão sugerido para os scripts de ETL

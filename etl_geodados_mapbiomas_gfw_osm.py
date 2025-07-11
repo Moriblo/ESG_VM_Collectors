@@ -11,11 +11,12 @@ from shapely.geometry import mapping
 # 📥 [Download automático dos shapefiles das fontes MapBiomas, GFW e OSM]
 # ------------------------------------------------------------
 
+
 urls = {
-    "mapbiomas": "https://storage.googleapis.com/mapbiomas-public/collection7/legenda/uso_solo_2022.zip",
     "gfw": "https://data.globalforestwatch.org/download/alerts/umd_landsat_alerts.zip",
     "osm": "https://download.geofabrik.de/south-america/brazil-latest-free.shp.zip"
 }
+
 
 destino = "dados/fontes_geodados"
 os.makedirs(destino, exist_ok=True)

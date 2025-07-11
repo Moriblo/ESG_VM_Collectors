@@ -18,7 +18,7 @@ Scripts para realizar: Extraction, Treatment e Loading (ETL) das fontes de dados
 | MapBiomas              | GeoDados          | [diag_geodados_mapbiomas_scraper](./diag_geodados_mapbiomas_scraper.md)     | [etl_geodados_mapbiomas_scraper.py](./etl_geodados_mapbiomas_scraper.py)         | 🚧 em desenvolvimento |
 | GFW                    | GeoDados          | [diag_geodados_gfw_scraper](./diag_geodados_gfw_scraper.md)                 | [etl_geodados_gfw_scraper.py](./etl_geodados_gfw_scraper.py)                     | 🚧 em desenvolvimento |
 | OSM                    | GeoDados          | [diag_geodados_osm](./diag_geodados_osm.md)                                 | [etl_geodados_osm.py](./etl_geodados_osm.py)                                     | 🚧 em desenvolvimento |
-| MapBiomas Degradação   | EstatisticasDegradacao | [diag_estatisticas_mapbiomas_degradacao](./diag_estatisticas_mapbiomas_degradacao.md) | [etl_estatisticas_mapbiomas_degradacao.py](./etl_estatisticas_mapbiomas_degradacao.py) | ⚠️ em testes       |
+| MapBiomas Degradação   | EstatDegrada      | [diag_estatdegrada_mapbiomas_degradacao](./diag_estatdegrada_mapbiomas_degradacao.md) | [etl_estatdegrada_mapbiomas_degradacao.py](./etl_estatdegrada_mapbiomas_degradacao.py) | ⚠️ em testes       |
 
 ---
 

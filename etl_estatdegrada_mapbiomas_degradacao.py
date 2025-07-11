@@ -12,8 +12,6 @@ from sqlalchemy import create_engine
 url_zip = "https://storage.googleapis.com/mapbiomas-public/initiatives/brasil/collection_8/degradation/statistics/brazil-degradation-statistics.zip"
 headers = {"User-Agent": "Mozilla/5.0"}
 
-
-
 res = requests.get(url_zip, headers=headers)
 if res.status_code != 200:
     raise Exception(f"Erro ao baixar estatísticas: {res.status_code}")
@@ -25,7 +23,7 @@ with zipfile.ZipFile(io.BytesIO(res.content)) as z:
     z.extractall(pasta_dados)
 
 # ------------------------------------------------------------
-# 📖 Leitura e consolidação das planilhas
+# 📖 Leitura segura das planilhas
 # ------------------------------------------------------------
 
 arquivos = [f for f in os.listdir(pasta_dados) if f.endswith(".xlsx")]
@@ -33,27 +31,36 @@ df_final = pd.DataFrame()
 
 for arquivo in arquivos:
     caminho = os.path.join(pasta_dados, arquivo)
-    planilhas = pd.ExcelFile(caminho).sheet_names
+    print(f"\n📂 Processando arquivo: {arquivo}")
+
+    try:
+        planilhas = pd.ExcelFile(caminho).sheet_names
+    except Exception as e:
+        print(f"⚠️ Falha ao ler estrutura do arquivo {arquivo} → {e}")
+        continue
 
     for aba in planilhas:
-        df = pd.read_excel(caminho, sheet_name=aba)
-        df["fonte"] = "mapbiomas_degradacao"
-        df["arquivo_origem"] = arquivo
-        df["planilha_origem"] = aba
-        df_final = pd.concat([df_final, df], ignore_index=True)
+        print(f"  📄 Lendo aba: {aba}")
+        try:
+            df = pd.read_excel(caminho, sheet_name=aba, nrows=500)  # limite de linhas para teste
+            df["fonte"] = "mapbiomas_degradacao"
+            df["arquivo_origem"] = arquivo
+            df["planilha_origem"] = aba
+            df_final = pd.concat([df_final, df], ignore_index=True)
+        except Exception as e:
+            print(f"    ⚠️ Erro ao ler aba '{aba}': {e}")
+            continue
 
 # ------------------------------------------------------------
-# 🔧 Normalização opcional
+# 🗃️ Inserção segura em banco de dados
 # ------------------------------------------------------------
 
-# Exemplo: renomear colunas ou empacotar como JSONB
-# df_final["atributos"] = df_final.to_dict(orient="records")
-
-# ------------------------------------------------------------
-# 🗃️ Inserção em banco de dados
-# ------------------------------------------------------------
-
-engine = create_engine("postgresql://usuario:senha@localhost:5432/seubanco")
-df_final.to_sql("estatdegrada", engine, if_exists="append", index=False)
-
-print("✅ Estatísticas de degradação inseridas com sucesso.")
+if df_final.empty:
+    print("⚠️ Nenhum dado foi carregado. Interrompendo carga.")
+else:
+    engine = create_engine("postgresql://usuario:senha@localhost:5432/seubanco")
+    try:
+        df_final.to_sql("estatdegrada", engine, if_exists="append", index=False)
+        print(f"\n✅ Inserção concluída com {len(df_final)} registros.")
+    except Exception as e:
+        print(f"❌ Falha ao inserir dados no banco: {e}")

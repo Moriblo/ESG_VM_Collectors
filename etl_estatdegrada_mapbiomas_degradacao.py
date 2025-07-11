@@ -9,8 +9,10 @@ from sqlalchemy import create_engine
 # 🌐 Download do ZIP de estatísticas
 # ------------------------------------------------------------
 
-url_zip = "https://storage.googleapis.com/mapbiomas-public/degradacao/brazil-degradation-statistics.zip"
+url_zip = "https://storage.googleapis.com/mapbiomas-public/initiatives/brasil/collection_8/degradation/statistics/brazil-degradation-statistics.zip"
 headers = {"User-Agent": "Mozilla/5.0"}
+
+
 
 res = requests.get(url_zip, headers=headers)
 if res.status_code != 200:

@@ -4,29 +4,42 @@
 
 ---
 
-## 🎯 Objetivo
+## ⚠️ Situação atual
 
-Importar dados geoespaciais de imóveis rurais cadastrados no SICAR, com atributos como `estado`, `municipio`, `tipo_imovel`, `area_total`, entre outros, e armazená-los na tabela `GeoDados` com estrutura genérica baseada em `JSONB` e `GEOMETRY`.
+O portal anteriormente vinculado ([https://www.gov.br/sicar](https://www.gov.br/sicar)) está indisponível.
 
----
+O site oficial ativo é:
 
-## 📦 Fonte dos dados
+🔗 [https://www.car.gov.br](https://www.car.gov.br)
 
-- **Origem:** [https://www.car.gov.br](https://www.car.gov.br)
-- **Tipo de dado:** Cadastro Ambiental Rural (CAR)
-- **Formato original:** `.zip` contendo `.shp` por estado
-- **Tipo de coleta:** Download manual ou automatizado por estado (a depender da disponibilidade dos links)
+Porém, não há links diretos para shapefiles em lote. O processo de coleta requer interação manual com CAPTCHA e preenchimento de e-mail — o que inviabiliza scraping ou automação direta.
 
 ---
 
-## 📊 Diagrama de Fluxo ETL
+## ⏸️ Status do coletor
+
+- **Status atual:** ⏸️ on hold
+- **Motivo:** Interface do portal bloqueia download automatizado
+- **Alternativa atual:** Download manual por estado ou município
+
+---
+
+## ✅ O que é possível automatizar
+
+- **ETL**: leitura, transformação e carga dos shapefiles baixados manualmente
+- **Organização por UF/município**: o script pode processar em lote
+- **Validação + inserção em banco de dados**: totalmente automatizável
+
+---
+
+## 📊 Diagrama de Fluxo ETL (semi-automatizado)
 
 ```text
-[Download dos arquivos .zip por estado (manual ou automatizado)]
+[Download manual dos arquivos .zip por estado/município]
         ↓
-[Extração dos arquivos .shp]
+[Organização em pastas por UF ou município]
         ↓
-[Leitura e conversão para GeoDataFrame com GeoPandas]
+[Leitura dos shapefiles com GeoPandas]
         ↓
 [Conversão de CRS para EPSG:4326 (WGS84)]
         ↓

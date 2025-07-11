@@ -4,6 +4,7 @@ import zipfile
 import io
 import pandas as pd
 
+# Este comentário é só um teste...
 # -------------------- Configurações --------------------
 
 URL_ZIP = "https://storage.googleapis.com/mapbiomas-public/initiatives/brasil/collection_8/degradation/statistics/brazil-degradation-statistics.zip"

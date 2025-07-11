@@ -15,10 +15,10 @@ Scripts para realizar: Extraction, Treatment e Loading (ETL) das fontes de dados
 | ISE B3                 | FundoESG          | [diag_fundoesg_iseb3](./diag_fundoesg_iseb3.md)                             | [etl_fundoesg_iseb3.py](./etl_fundoesg_iseb3.py)                                 | 🚫 não iniciado    |
 | Ações Verdes           | FundoESG          | [diag_fundoesg_acoesverdes](./diag_fundoesg_acoesverdes.md)                 | [etl_fundoesg_acoesverdes.py](./etl_fundoesg_acoesverdes.py)                     | 🚫 não iniciado    |
 | Aliança Brasil NbS     | ProjetoNbS        | [diag_projetonbs_alianca](./diag_projetonbs_alianca.md)                     | [etl_projetonbs_alianca.py](./etl_projetonbs_alianca.py)                         | 🚫 não iniciado    |
-| MapBiomas              | GeoDados          | [diag_geodados_mapbiomas_scraper](./diag_geodados_mapbiomas_scraper.md)     | [etl_geodados_mapbiomas_scraper.py](./etl_geodados_mapbiomas_scraper.py)         | ⚠️ em testes       |
+| MapBiomas              | GeoDados          | [diag_geodados_mapbiomas_scraper](./diag_geodados_mapbiomas_scraper.md)     | [etl_geodados_mapbiomas_scraper.py](./etl_geodados_mapbiomas_scraper.py)         | 🚧 em desenvolvimento |
 | GFW                    | GeoDados          | [diag_geodados_gfw_scraper](./diag_geodados_gfw_scraper.md)                 | [etl_geodados_gfw_scraper.py](./etl_geodados_gfw_scraper.py)                     | 🚧 em desenvolvimento |
-| OSM                    | GeoDados          | [diag_geodados_osm](./diag_geodados_osm.md)                                 | [etl_geodados_osm.py](./etl_geodados_osm.py)                                     | ⚠️ em testes       |
-| MapBiomas Degradação   | EstatDegrada      | [diag_estatdegrada_mapbiomas_degradacao](./diag_estatdegrada_mapbiomas_degradacao.md) | [etl_estatdegrada_mapbiomas_degradacao.py](./etl_estatdegrada_mapbiomas_degradacao.py) | 🚧 em desenvolvimento |
+| OSM                    | GeoDados          | [diag_geodados_osm](./diag_geodados_osm.md)                                 | [etl_geodados_osm.py](./etl_geodados_osm.py)                                     | 🚧 em desenvolvimento |
+| MapBiomas Degradação   | EstatisticasDegradacao | [diag_estatisticas_mapbiomas_degradacao](./diag_estatisticas_mapbiomas_degradacao.md) | [etl_estatisticas_mapbiomas_degradacao.py](./etl_estatisticas_mapbiomas_degradacao.py) | ⚠️ em testes       |
 
 ---
 

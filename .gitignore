@@ -1,1 +1,46 @@
-dados/mapbiomas_degradacao/*.xlsx
+# ─────────────────────────────────────────────────────
+# 🚫 RESTRIÇÃO: arquivos grandes NÃO serão versionados
+# GitHub possui limite de tamanho (máx. 100 MB por arquivo)
+# Veja: https://git-scm.com/docs/gitignore e https://git-lfs.github.com
+# ─────────────────────────────────────────────────────
+
+# ❌ Planilhas e dados brutos (>50MB)
+*.xlsx
+*.csv
+*.json
+*.parquet
+*.zip
+
+# ❌ Arquivos binários e mídia pesada
+*.mp4
+*.mov
+*.avi
+*.wav
+*.mp3
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.psd
+
+# ❌ Saídas de modelos ou scripts temporários
+*.pkl
+*.h5
+*.joblib
+*.model
+*.log
+*.tmp
+
+# ❌ Diretórios de dados locais
+dados/
+data/
+notebooks/datasets/
+output/
+__pycache__/
+
+# 🔒 Evita envio de arquivos de configuração específicos
+.env
+*.env
+*.token
+*.key
+

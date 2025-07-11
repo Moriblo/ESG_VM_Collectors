@@ -1,9 +1,3 @@
-
----
-
-## 🐍 Script: `etl_estatdegrada_mapbiomas_degradacao.py`
-
-```python
 import os
 import requests
 import zipfile

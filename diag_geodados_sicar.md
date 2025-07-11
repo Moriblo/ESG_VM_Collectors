@@ -12,7 +12,7 @@ Importar dados geoespaciais de imóveis rurais cadastrados no SICAR, com atribut
 
 ## 📦 Fonte dos dados
 
-- **Origem:** [https://www.gov.br/sicar](https://www.gov.br/sicar)
+- **Origem:** [https://www.car.gov.br](https://www.car.gov.br)
 - **Tipo de dado:** Cadastro Ambiental Rural (CAR)
 - **Formato original:** `.zip` contendo `.shp` por estado
 - **Tipo de coleta:** Download manual ou automatizado por estado (a depender da disponibilidade dos links)

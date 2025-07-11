@@ -4,40 +4,50 @@ import zipfile
 import io
 import pandas as pd
 
-# ------------------------------------------------------------
-# 🌐 Download do ZIP de estatísticas
-# ------------------------------------------------------------
+# -------------------- Configurações --------------------
 
-url_zip = "https://storage.googleapis.com/mapbiomas-public/initiatives/brasil/collection_8/degradation/statistics/brazil-degradation-statistics.zip"
+URL_ZIP = "https://storage.googleapis.com/mapbiomas-public/initiatives/brasil/collection_8/degradation/statistics/brazil-degradation-statistics.zip"
+PASTA_DADOS = "dados/mapbiomas_degradacao"
+CAMPOS_INTERESSANTES = [
+    "estado", "bioma", "municipio", "id_municipio_ibge",
+    "categoria_degradacao", "area_ha", "ano"
+]
+
+# -------------------- Baixar e extrair --------------------
+
 headers = {"User-Agent": "Mozilla/5.0"}
-
-res = requests.get(url_zip, headers=headers)
+res = requests.get(URL_ZIP, headers=headers)
 if res.status_code != 200:
-    raise Exception(f"Erro ao baixar estatísticas: {res.status_code}")
+    raise Exception(f"Falha ao baixar ZIP: {res.status_code}")
 
-pasta_dados = "dados/mapbiomas_degradacao"
-os.makedirs(pasta_dados, exist_ok=True)
-
+os.makedirs(PASTA_DADOS, exist_ok=True)
 with zipfile.ZipFile(io.BytesIO(res.content)) as z:
-    z.extractall(pasta_dados)
+    z.extractall(PASTA_DADOS)
 
-# ------------------------------------------------------------
-# 📋 Listar arquivos .xlsx e suas abas
-# ------------------------------------------------------------
+# -------------------- Explorar arquivos e abas --------------------
 
-arquivos = [f for f in os.listdir(pasta_dados) if f.endswith(".xlsx")]
+arquivos = [f for f in os.listdir(PASTA_DADOS) if f.endswith(".xlsx")]
 
-print("\n📁 Arquivos encontrados e suas respectivas abas:\n")
-
-for i, arquivo in enumerate(arquivos, start=1):
-    caminho = os.path.join(pasta_dados, arquivo)
-    print(f"{i:02d}. 📂 Arquivo: {arquivo}")
+for arquivo in arquivos:
+    caminho = os.path.join(PASTA_DADOS, arquivo)
+    print(f"\n📁 Arquivo: {arquivo}")
     try:
         planilhas = pd.ExcelFile(caminho).sheet_names
         for aba in planilhas:
-            print(f"     └─ 📄 Aba: {aba}")
-    except Exception as e:
-        print(f"     ❌ Erro ao acessar abas: {e}")
-    print()
+            print(f"  └─ 📝 Aba: {aba}")
+            try:
+                df = pd.read_excel(caminho, sheet_name=aba, nrows=5, engine="openpyxl")
+                colunas = df.columns.str.lower().str.strip()
+                print(f"       📊 Colunas: {list(colunas)}")
 
-print("\n✅ Listagem concluída. Nenhum dado foi carregado ainda.")
+                encontrados = [c for c in CAMPOS_INTERESSANTES if c in colunas]
+                if encontrados:
+                    print(f"       ✅ Campos encontrados: {encontrados}")
+                else:
+                    print(f"       ❌ Nenhum campo relevante detectado")
+
+            except Exception as e:
+                print(f"       ⚠️ Erro ao ler aba: {e}")
+    except Exception as e:
+        print(f"  ⚠️ Falha ao acessar abas → {e}")
+

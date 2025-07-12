@@ -7,7 +7,6 @@
 # ❌ Planilhas e dados brutos (>50MB)
 *.xlsx
 *.csv
-*.json
 *.parquet
 *.zip
 

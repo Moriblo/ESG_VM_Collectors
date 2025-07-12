@@ -1,0 +1,28 @@
+{
+  "PERFIL_ATIVO": "zip_brazil_degradation_statistics__xlsx_brazil_state_degradation_frequency_8.0.1a",
+  "zip_brazil_degradation_statistics__xlsx_brazil_state_degradation_frequency_8.0.1a": {
+    "config": {
+      "url_zip": "https://storage.googleapis.com/mapbiomas-public/initiatives/brasil/collection_8/degradation/statistics/brazil-degradation-statistics.zip",
+      "pasta_dados": "dados/mapbiomas/extraction",
+      "arquivo_alvo": "brazil-state-degradation-frequency-8.0.1a.xlsx"
+    },
+    "interpreta_ano": "Área degradada no ano {ano} (em hectares)",
+    "dicionario": {
+      "feature_id": "Identificador único da feição geográfica (pixel, polígono ou área de análise)",
+      "name": "Nome da classe ou elemento de uso/cobertura associado à feição",
+      "level_0": "Nível mais geral da classificação de uso/cobertura (ex: Vegetação Nativa)",
+      "level_1": "Subcategoria da legenda de uso da terra (ex: Floresta)",
+      "level_2": "Detalhamento adicional do tipo de cobertura (ex: Floresta Ombrófila)",
+      "level_3": "Classificação ainda mais específica da cobertura (se aplicável)",
+      "level_4": "Nível mais granular da legenda, se utilizado",
+      "geocode": "Código geográfico associado à feição (ex: código IBGE do município ou estado)",
+      "index": "Índice de ordenação, hierarquia ou representação da feição dentro do conjunto",
+      "class_id": "Código numérico da classe de uso ou cobertura da terra (ex: 15 = pastagem)",
+      "color": "Cor atribuída à classe na visualização cartográfica (formato hexadecimal)",
+      "theme": "Tema associado à feição (ex: degradação, mineração, agricultura)",
+      "raw": "Valor bruto original antes de agregações ou tratamentos estatísticos",
+      "value": "Valor final calculado (ex: área degradada, frequência, porcentagem)",
+      "key": "Chave de indexação ou agrupamento (ex: nome da classe ou ID relacional)"
+    }
+  }
+}

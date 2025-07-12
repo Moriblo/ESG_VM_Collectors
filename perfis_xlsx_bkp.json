@@ -1,0 +1,12 @@
+{
+  "PERFIL_ATIVO": "zip_brazil_degradation_statistics__xlsx_brazil_state_degradation_frequency_8.0.1a",
+  "zip_brazil_degradation_statistics__xlsx_brazil_state_degradation_frequency_8.0.1a": {
+    "config": {
+      "url_zip": "https://storage.googleapis.com/mapbiomas-public/initiatives/brasil/collection_8/degradation/statistics/brazil-degradation-statistics.zip",
+      "pasta_dados": "dados/mapbiomas/extraction",
+      "arquivo_alvo": "brazil-state-degradation-frequency-8.0.1a.xlsx"
+    },
+    "interpreta_ano": "Área degradada no ano {ano} (em hectares)",
+    "dicionario": {}
+  }
+}

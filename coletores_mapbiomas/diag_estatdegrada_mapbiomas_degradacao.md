@@ -32,4 +32,4 @@ Importar dados tabulares de degradação da vegetação nativa por vetor (pastag
         ↓
 [Inclusão do campo 'fonte' e atributos temporais]
         ↓
-[Inserção em tabela EstatDegrada]
+[Inserção em tabela GeoDados_Degrada]

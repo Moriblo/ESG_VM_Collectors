@@ -1,0 +1,12 @@
+{
+  "atualizar_json": true,
+  "arquivo_perfis": "perfis_xlsx.json",
+  "cache_referencias_path": "referencias_mapbiomas.json",
+  "usar_legenda_csv": false,
+  "url_legenda_csv": "https://storage.googleapis.com/mapbiomas-public/auxiliary/legend/mapbiomas-legend.csv",
+  "url_glossario_oficial": "https://brasil.mapbiomas.org/glossario/",
+  "timeout_conexao": 10,
+  "limpar_csv_legenda_apos_uso": true,
+  "backup_prefix": "perfis_xlsx_bkp",
+  "backup_timestamp_format": "%y%m%d%H%M%S"
+}

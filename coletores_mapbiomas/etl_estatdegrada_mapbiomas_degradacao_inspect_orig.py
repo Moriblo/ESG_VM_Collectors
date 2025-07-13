@@ -6,6 +6,7 @@ import json
 import pandas as pd
 import time
 from tqdm import tqdm
+from datetime import datetime
 
 # ------------------------------------------------------------
 # 🛠️ Variáveis principais de controle do script
@@ -149,9 +150,19 @@ def atualizar_dicionario_json(colunas):
         with open(ARQUIVO_PERFIS, "r", encoding="utf-8") as f:
             original = json.load(f)
 
-        with open("perfis_xlsx_bkp.json", "w", encoding="utf-8") as bkp:
+        # 🕒 Gerar timestamp no formato aammddhhmmss
+        timestamp = datetime.now().strftime("%y%m%d%H%M%S")
+
+        # 🔍 Obter PA_ID do perfil ativo
+        pa_id = original.get(PERFIL_ATIVO, {}).get("PA_ID", "000")
+
+        # 📄 Nome do arquivo de backup com timestamp e PA_ID
+        nome_backup = f"perfis_xlsx_bkp_{timestamp}_{pa_id}.json"
+
+        # 🧷 Criar backup dinâmico
+        with open(nome_backup, "w", encoding="utf-8") as bkp:
             json.dump(original, bkp, indent=2, ensure_ascii=False)
-        print("🧷 Backup salvo como: perfis_xlsx_bkp.json")
+        print(f"🧷 Backup salvo como: {nome_backup}")
 
         novo_dicionario = {}
         for col in colunas:

@@ -1,0 +1,15 @@
+{
+  "feature_id": "Identificador único da feição espacial no conjunto de dados. Fonte: [RFC 7946 GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946)",
+  "theme": "Tema principal da classificação, como degradação, vegetação secundária ou mineração. Fonte: [Glossário MapBiomas](https://brasil.mapbiomas.org/glossario)",
+  "geocode": "Código geográfico que representa o estado ou município da feição. Fonte: [IBGE Geocódigos](https://www.ibge.gov.br)",
+  "class_id": "Código da classe de uso/cobertura conforme a legenda oficial do MapBiomas. Fonte: Coleção 8 – Legenda CSV",
+  "color": "Código hexadecimal associado visualmente à classe temática da feição. Fonte: Convenções cartográficas GIS",
+  "level_0": "Nível hierárquico geral da classificação temática. Fonte: Estrutura das planilhas MapBiomas",
+  "level_1": "Subnível de agrupamento temático. Pode indicar categorias como 'Vegetação Natural' ou 'Área Antrópica'.",
+  "level_2": "Categoria mais específica dentro do agrupamento anterior. Ex: 'Formação Florestal', 'Pastagem'.",
+  "level_3": "Detalhamento adicional da feição espacial conforme granularidade temática.",
+  "level_4": "Nível mais profundo na hierarquia de classificação, usado quando aplicável.",
+  "raw": "Valor bruto extraído da planilha, sem normalização ou interpretação adicional.",
+  "value": "Valor numérico estimado para a feição no ano analisado, geralmente representando área em hectares.",
+  "key": "Identificador auxiliar utilizado para indexação, agrupamento ou associação interna na base de dados."
+}

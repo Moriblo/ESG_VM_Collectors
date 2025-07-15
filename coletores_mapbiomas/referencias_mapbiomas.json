@@ -11,5 +11,7 @@
   "level_4": "Nível mais profundo na hierarquia de classificação, usado quando aplicável.",
   "raw": "Valor bruto extraído da planilha, sem normalização ou interpretação adicional.",
   "value": "Valor numérico estimado para a feição no ano analisado, geralmente representando área em hectares.",
-  "key": "Identificador auxiliar utilizado para indexação, agrupamento ou associação interna na base de dados."
+  "key": "Identificador auxiliar utilizado para indexação, agrupamento ou associação interna na base de dados.",
+  "name": "Nome da unidade espacial representada pela feição. Ex: estado, município.",
+  "index": "Indicador calculado para cada feição com base em estatísticas ambientais ou temporais."
 }
